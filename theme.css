@@ -1,17 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 :root {
-  font-family: "Montserrat", sans-serif;
   --black: #202729;
   --white: #ffffff;
   --spearmint: #63d297;
-  --spearmint-muted: #4ba173;
+  --spearmint-dark: #4ba173;
   --red: #ff5252;
   --yellow: #fff176;
   --gray1: #353744;
   --gray2: #424242;
   --gray3: #616161;
   --gray4: #999999;
+
+  --blue: #4a86e8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,36 +20,117 @@
     --bg: var(--black);
     --text: var(--white);
   }
+
+  input,
+  textarea {
+    background-color: var(--gray1);
+  }
 }
 
-@media (prefers-color-scheme: white) {
+@media (prefers-color-scheme: light) {
   :root {
     --bg: var(--white);
     --text: var(--black);
   }
+
+  input,
+  textarea {
+    background-color: var(--gray4);
+  }
+}
+
+:root {
+  background-color: var(--bg);
+}
+
+* {
+  color: var(--text);
+  font-family: "Montserrat", sans-serif;
+}
+
+button:hover,
+input:hover,
+textarea:hover {
+  box-shadow: 0 0 0 2px var(--spearmint);
+}
+
+button,
+select {
+  font-weight: 600;
 }
 
 button {
   background-color: var(--spearmint);
-  color: var(--white);
   border: 0;
-  padding: 1em;
+  padding: 1em 1.5em;
   border-radius: 0.5em;
-  text-transform: uppercase;
 }
 
 button:hover {
-  background-color: var(--spearmint-muted);
+  background-color: var(--spearmint-dark);
 }
 
 a,
 a:visited {
   color: var(--red);
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 input[type="text"],
 textarea {
-  border: 2px solid var(--spearmint);
+  padding: 1em;
+  border-radius: 0.5em;
+  border: none;
+}
+
+textarea {
+  display: block;
+  margin-right: 0;
+  box-sizing: border-box;
+}
+
+select {
+  background-color: var(--spearmint);
+  border: 0;
   padding: 0.5em;
   border-radius: 0.5em;
+}
+
+blockquote {
+  border-left: 4px solid var(--spearmint);
+  margin-left: 0.5em;
+  padding-left: 0.5em;
+}
+
+hr {
+  background-color: var(--spearmint);
+  border: 0;
+  height: 1px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.5em;
+}
+
+@media (prefers-color-scheme: dark) {
+  tr:nth-child(even) {
+    background-color: var(--gray1);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  tr:nth-child(even) {
+    background-color: var(--gray4);
+  }
+}
+
+thead {
+  font-weight: 600;
+  border-bottom: 1px solid var(--spearmint);
 }
