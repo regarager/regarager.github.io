@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 :root {
   --black: #202729;
   --white: #ffffff;
-  --spearmint: #63d297;
+  /* --spearmint: #63d297; */
+  --spearmint: #3dc77d;
   --spearmint-dark: #4ba173;
   --red: #ff5252;
   --yellow: #fff176;
@@ -21,6 +22,7 @@
     --text: var(--white);
   }
 
+  code,
   input,
   textarea {
     background-color: var(--gray1);
@@ -33,6 +35,7 @@
     --text: var(--black);
   }
 
+  code,
   input,
   textarea {
     background-color: var(--gray4);
@@ -45,24 +48,34 @@
 
 * {
   color: var(--text);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-button:hover,
-input:hover,
+code {
+  font-family: monospace;
+  color: #d8bfd8;
+  padding: 0 0.2em;
+}
+
+pre > code {
+  padding: 10px;
+  display: block;
+  overflow-x: auto;
+}
+
+input:not(reset):not(submit):hover,
 textarea:hover {
   box-shadow: 0 0 0 2px var(--spearmint);
 }
 
 button,
+input[type="reset"],
+input[type="submit"],
 select {
-  font-weight: 600;
-}
-
-button {
+  font-size: 1em;
   background-color: var(--spearmint);
   border: 0;
-  padding: 1em 1.5em;
+  padding: 0.5em 1em;
   border-radius: 0.5em;
 }
 
@@ -80,11 +93,24 @@ a:hover {
   text-decoration: underline;
 }
 
-input[type="text"],
+input,
 textarea {
-  padding: 1em;
+  padding: 0.8em;
   border-radius: 0.5em;
   border: none;
+  margin-bottom: 0.5em;
+}
+
+input:not([type="checkbox"]):not([type="radio"]) {
+  display: block;
+}
+
+label {
+  display: inline-block;
+}
+
+details[open] summary {
+  text-decoration: underline;
 }
 
 textarea {
@@ -133,4 +159,8 @@ table {
 thead {
   font-weight: 600;
   border-bottom: 1px solid var(--spearmint);
+}
+
+th {
+  justify-self: left;
 }
